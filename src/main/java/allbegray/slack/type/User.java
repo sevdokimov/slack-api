@@ -7,6 +7,7 @@ public class User {
 
 	protected String id;
 	protected String name;
+	protected String real_name;
 	protected Boolean deleted;
 	protected String color;
 	protected Profile profile;
@@ -33,6 +34,14 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getRealName() {
+		return real_name;
+	}
+
+	public void setRealName(String realName) {
+		this.real_name = realName;
 	}
 
 	public Boolean getDeleted() {

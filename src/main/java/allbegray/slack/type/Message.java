@@ -1,9 +1,9 @@
 package allbegray.slack.type;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Message {
@@ -20,6 +20,7 @@ public class Message {
 	protected String permalink;
 	protected List<String> pinned_to;
 	protected List<Reaction> reactions;
+	protected Edited edited;
 
 	public String getType() {
 		return type;
@@ -105,6 +106,14 @@ public class Message {
 
 	public void setReactions(List<Reaction> reactions) {
 		this.reactions = reactions;
+	}
+
+	public Edited getEdited() {
+		return edited;
+	}
+
+	public void setEdited(Edited edited) {
+		this.edited = edited;
 	}
 
 	public Boolean getIs_starred() {
