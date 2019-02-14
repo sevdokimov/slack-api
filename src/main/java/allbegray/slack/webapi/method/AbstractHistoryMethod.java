@@ -1,11 +1,11 @@
 package allbegray.slack.webapi.method;
 
-import java.util.List;
-import java.util.Map;
-
 import allbegray.slack.validation.Problem;
 import allbegray.slack.validation.ValidationError;
 import allbegray.slack.webapi.SlackWebApiConstants;
+
+import java.util.List;
+import java.util.Map;
 
 public abstract class AbstractHistoryMethod extends AbstractMethod {
 
@@ -14,6 +14,7 @@ public abstract class AbstractHistoryMethod extends AbstractMethod {
 	}
 
 	protected String channel;
+	protected String cursor;
 	protected String latest;
 	protected String oldest;
 	protected boolean inclusive;
@@ -26,6 +27,14 @@ public abstract class AbstractHistoryMethod extends AbstractMethod {
 
 	public void setChannel(String channel) {
 		this.channel = channel;
+	}
+
+	public String getCursor() {
+		return cursor;
+	}
+
+	public void setCursor(String cursor) {
+		this.cursor = cursor;
 	}
 
 	public String getLatest() {
@@ -81,6 +90,10 @@ public abstract class AbstractHistoryMethod extends AbstractMethod {
 	@Override
 	protected void createParameters(Map<String, String> parameters) {
 		parameters.put("channel", channel);
+
+		if (cursor != null) {
+			parameters.put("cursor", cursor);
+		}
 		if (latest != null) {
 			parameters.put("latest", latest);	
 		}
