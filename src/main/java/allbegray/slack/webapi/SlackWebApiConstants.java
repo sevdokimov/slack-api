@@ -88,6 +88,10 @@ public interface SlackWebApiConstants {
 	String GROUPS_SET_TOPIC = "groups.setTopic";
 	String GROUPS_UNARCHIVE = "groups.unarchive";
 
+	// conversations
+
+	String CONVERSATIONS_HISTORY = "conversations.history";
+
 	// im (direct message channel)
 
 	String IM_CLOSE = "im.close";

@@ -1278,4 +1278,17 @@ public class SlackWebApiClientImpl implements SlackWebApiClient {
 		return retNode;
 	}
 
+	@Override
+	public History getConversationHistory(String channel, String latest, String oldest, boolean inclusive, int count, boolean unreads, String cursor) {
+		ConversationHistoryMethod conversationHistoryMethod = new ConversationHistoryMethod(channel);
+		conversationHistoryMethod.setLatest(latest);
+		conversationHistoryMethod.setOldest(oldest);
+		conversationHistoryMethod.setInclusive(inclusive);
+		conversationHistoryMethod.setCount(count);
+		conversationHistoryMethod.setUnreads(unreads);
+		conversationHistoryMethod.setCursor(cursor);
+
+		JsonNode retNode = call(conversationHistoryMethod);
+		return readValue(retNode, null, History.class);
+	}
 }

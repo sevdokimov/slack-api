@@ -1,12 +1,12 @@
 package allbegray.slack.type;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class History {
+public class History extends ResponseMetadataHolder {
 
 	protected String latest;
 	protected List<Message> messages;

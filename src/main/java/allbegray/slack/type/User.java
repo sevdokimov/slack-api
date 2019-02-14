@@ -36,12 +36,12 @@ public class User {
 		this.name = name;
 	}
 
-	public String getRealName() {
+	public String getReal_name() {
 		return real_name;
 	}
 
-	public void setRealName(String realName) {
-		this.real_name = realName;
+	public void setReal_name(String real_name) {
+		this.real_name = real_name;
 	}
 
 	public Boolean getDeleted() {
